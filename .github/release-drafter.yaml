@@ -1,0 +1,40 @@
+categories:
+  - title: 🚀 New features
+    label: feature
+  - title: ⚙️ Improvements
+    label: improvement
+  - title: 🐞 Bug fixes
+    labels:
+      - bugfix
+      - hotfix
+  - title: 🧰 Maintenance tasks
+    labels:
+      - chore
+      - refactor
+      - style
+  - title: 🧪 Testing
+    label: test
+  - title: 📖 Documentation
+    label: docs
+
+version-resolver:
+  major:
+    labels:
+      - release.major
+  minor:
+    labels:
+      - release.minor
+  patch:
+    labels:
+      - release.patch
+  # It seems that "patch" is the default resolved version from release-drafter.
+  # However, let’s recall a pythonic adage: “explicit is better than implicit”.
+  # https://github.com/release-drafter/release-drafter/blob/master/schema.json
+  default: patch
+
+tag-template: $RESOLVED_VERSION
+name-template: Test’s $RESOLVED_VERSION
+change-template: "- $TITLE (#$NUMBER by @$AUTHOR)"
+template: |
+  ## What’s changed
+  $CHANGES
